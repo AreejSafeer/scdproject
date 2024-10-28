@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background-image: url('images/diagnostic-tests.png'); /* Make sure the file path is correct */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    position: relative;
+    color: white;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Space between left and right items */
+    align-items: center; /* Vertically center items */
+    background-color: royalblue; /* Ribbon color */
+    padding: 15px 20px; /* Padding around the header */
+    height: 120px; /* Height of the header */
+    position: absolute; /* Keep it on top of other elements */
+    top: 0; /* Position it at the top */
+    width: 100%; /* Full width */
+    z-index: 10; /* Ensure it is above other content */
+}
+.header img {
+    width: 140px; /* Adjust to make the logo smaller */
+    height: auto; /* Maintain aspect ratio */
+    padding-left: 10px; /* Optional: Add some spacing */
+}
+.logo-container {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align items vertically */
+    margin-left: 10px; /* Add some left margin if needed */
+}
+.logo {
+    width: 70px; /* Adjust the size of your logo */
+    height: auto; /* Keep aspect ratio */
+    margin-right: 10px; /* Space between the logo and text */
+}
+
+.logo-name {
+   
+        font-size: 1.6em; /* Font size for the logo name */
+        color: white; /* Color of the text */
+        font-weight: bold; /* Makes the text bold */
+        margin-left: 5px; /* Adjust left margin to control spacing from the logo */
+    margin-right: 30px; /* Adjust right margin for spacing after the name */
+    margin-top: 0; /* Adjust top margin as needed */
+    margin-bottom: 0; /* Adjust bottom margin as needed */
+    
+    }
+    
+
+
+.social-media a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.navigation {
+    background-color: transparent; /* Ensure the navigation blends with the ribbon */
+    padding: 0;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Add some space between links */
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    z-index: 1; /* Ensure it's above the background but below the header */
+    position: relative;
+}
+
+.welcome-message {
+    flex: 1;
+    z-index: 2; /* Ensure the welcome message is visible */
+
+}
+.welcome-message {
+    color: white; /* Make sure the text is white for visibility */
+    text-align: left; /* Align text to the left */
+    margin: 130px 0 0 20px; /* Add some margin to position it properly */
+    font-family: Arial, sans-serif; /* Set the font */
+}
+
+.welcome-message h1 {
+    font-size: 36px; /* Set size for the main heading */
+    font-weight: bold; /* Make it bold */
+}
+
+.welcome-message p {
+    font-size: 18px; /* Set size for the paragraph */
+}
+.welcome-container {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: flex-start; /* Align to the left */
+    height: 100%; /* Ensure it takes the full height of the parent */
+    margin-left: 20px; /* Optional: Adjust left margin */
+    color: white; /* Ensure text is visible */
+}
+
+
+.info-boxes {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    z-index: 2; /* Ensure the buttons are visible */
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center; /* Center the text in the boxes */
+    z-index: 2; /* Ensure the boxes are visible */
+}
+
+.contact-us {
+    padding: 10px 20px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
+.info-boxes {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    background-color: royalblue;
+    color: white;
+    padding: 50px;
+    margin: 30px 120px;
+    border-radius: 15px;
+    text-align: center;
+    width: 400px;
+    height: 50px;
+    cursor: pointer; /* To make it clickable */
+    transition: background-color 0.3s;
+}
+
+.box:hover {
+    background-color: #004aad; /* Darker blue on hover */
+}
+
+
+
+.footer {
+    background-color: royalblue; /* Change to royal blue */
+    color: white;
+    padding: 20px;
+    position: fixed; /* Stick the footer to the bottom */
+    bottom: 0;
+    width: 100%; /* Make sure it spans the full width */
+}
+
+.footer .ribbon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer h2 {
+    margin-bottom: 10px;
+}
+
+.footer button {
+    padding: 10px 20px;
+    margin-top: 5px;
+    background-color: white; /* White background for buttons */
+    color: royalblue; /* Button text in royal blue */
+    border: none;
+    border-radius: 5px; /* Optional: rounded corners for buttons */
+    cursor: pointer; /* Make it look clickable */
+}
+
+.footer button:hover {
+    background-color: #fff; /* Lighter button color on hover */
+    color: #004aad; /* Darker blue on hover */
+}
+

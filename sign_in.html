@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signin.css">
+    <title>Sign In - Medical Test Reporting System</title>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay">
+            <h1>Welcome to Medical Test Reporting System</h1>
+            <p>Sign in NOW!</p>
+            <div id="message" class="message"></div>
+            <form id="signInForm" onsubmit="return signIn(event)">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                
+                <!-- Sign-in button to submit the form -->
+                <button type="submit" class="btn btn-primary">Sign In</button>
+                
+                <div class="social-signin">
+                    <p>Or sign in with:</p>
+                    <button type="button">Facebook</button>
+                    <button type="button">Google</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
+

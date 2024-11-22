@@ -1,6 +1,8 @@
 const express = require('express');
 const sql = require('mssql/msnodesqlv8');
 const path = require('path');
+const UserFactory = require('./UserFactory'); // Import UserFactory
+const db = require('./db'); // Import the singleton database instance
 const app = express();
 const port = 3000;
 
@@ -12,35 +14,28 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Set the default route to load sign_in.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'sign_in.html'));
+    res.sendFile(path.join(__dirname, '../public', 'sign_in.html'));
 });
 
-// Database configuration
-const config = {
-    server: "DESKTOP-SBGDJ25\\SQLEXPRESS",
-    database: "medicaltestreports",
-    driver: "msnodesqlv8",
-    options: {
-        trustedConnection: true
+// Connect to the database using Singleton Pattern
+db.getConnection().then(connection => {
+    if (connection) {
+        console.log("Database connection established through Singleton.");
     }
-};
-
-// Connect to the database
-sql.connect(config, function(err) {
-    if (err) {
-        console.log("Database connection failed:", err);
-    } else {
-        console.log("Connected to the database successfully!");
-    }
+}).catch(err => {
+    console.log("Error in establishing database connection through Singleton:", err);
 });
 
 // Login route
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
     const request = new sql.Request();
-    
-    // Query to check if username and password match
-    request.query(`SELECT * FROM Users WHERE Username = '${username}' AND Password = '${password}'`, function(err, result) {
+
+    // Use parameterized queries to prevent SQL injection
+    request.input('username', sql.VarChar, username);
+    request.input('password', sql.VarChar, password);
+
+    request.query('SELECT * FROM Users WHERE Username = @username AND Password = @password', function(err, result) {
         if (err) {
             console.log(err);
             res.status(500).send('Server error');
@@ -48,12 +43,42 @@ app.post('/login', (req, res) => {
         }
 
         if (result.recordset.length > 0) {
-            // Send 'success' if login is valid
             res.send('success');
         } else {
-            // Send error message if login is invalid
             res.send('Incorrect username or password.');
         }
+    });
+});
+
+// Sign-up route
+app.post('/signup', (req, res) => {
+    const { username, email, password } = req.body;
+
+    // Validate inputs
+    if (!email.endsWith('@gmail.com')) {
+        return res.status(400).send('Email must end with @gmail.com.');
+    }
+    if (!/^[a-zA-Z]+$/.test(username)) {
+        return res.status(400).send('Username must only contain alphabets.');
+    }
+    if (password.length < 5) {
+        return res.status(400).send('Password must be at least 5 characters long.');
+    }
+
+    const request = new sql.Request();
+
+    // Parameterized queries to prevent SQL injection
+    request.input('username', sql.VarChar, username);
+    request.input('email', sql.VarChar, email);
+    request.input('password', sql.VarChar, password);
+
+    request.query(`INSERT INTO Users (Username, Email, Password) VALUES (@username, @email, @password)`, function (err, result) {
+        if (err) {
+            console.log(err);
+            res.status(500).send('Server error');
+            return;
+        }
+        res.send('Account created successfully! You can now login.');
     });
 });
 

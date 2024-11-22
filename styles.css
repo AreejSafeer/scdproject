@@ -6,215 +6,244 @@
 
 body {
     font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
-.background {
-    background-image: url('images/diagnostic-tests.png'); /* Make sure the file path is correct */
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevents repeating the image */
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full width */
-    position: relative;
+header {
+    background-color: #0044cc;
     color: white;
-}
-
-
-.header {
+    padding: 15px 20px;
     display: flex;
-    justify-content: space-between; /* Space between left and right items */
-    align-items: center; /* Vertically center items */
-    background-color: royalblue; /* Ribbon color */
-    padding: 15px 20px; /* Padding around the header */
-    height: 120px; /* Height of the header */
-    position: absolute; /* Keep it on top of other elements */
-    top: 0; /* Position it at the top */
-    width: 100%; /* Full width */
-    z-index: 10; /* Ensure it is above other content */
-}
-.header img {
-    width: 140px; /* Adjust to make the logo smaller */
-    height: auto; /* Maintain aspect ratio */
-    padding-left: 10px; /* Optional: Add some spacing */
-}
-.logo-container {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center align items vertically */
-    margin-left: 10px; /* Add some left margin if needed */
-}
-.logo {
-    width: 70px; /* Adjust the size of your logo */
-    height: auto; /* Keep aspect ratio */
-    margin-right: 10px; /* Space between the logo and text */
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.logo-name {
-   
-        font-size: 1.6em; /* Font size for the logo name */
-        color: white; /* Color of the text */
-        font-weight: bold; /* Makes the text bold */
-        margin-left: 5px; /* Adjust left margin to control spacing from the logo */
-    margin-right: 30px; /* Adjust right margin for spacing after the name */
-    margin-top: 0; /* Adjust top margin as needed */
-    margin-bottom: 0; /* Adjust bottom margin as needed */
-    
-    }
-    
-
-
-.social-media a {
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-}
-
-.navigation {
-    background-color: transparent; /* Ensure the navigation blends with the ribbon */
-    padding: 0;
-}
-
-.navigation ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Add some space between links */
-}
-
-.navigation a {
-    color: white;
-    text-decoration: none;
+header .logo {
+    font-size: 24px;
     font-weight: bold;
 }
 
-.navigation a:hover {
-    text-decoration: underline;
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons a {
+    margin-left: 10px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.hero {
+    background-image: linear-gradient(to right, rgba(0, 68, 204, 0.8), rgba(0, 128, 255, 0.8)), url('images/pexels-artempodrez-5726714.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: left;
+    animation: fadeIn 2s ease-in-out;
+}
+/* Other existing CSS remains the same */
+
+.hero {
+    background-image: linear-gradient(to right, rgba(0, 68, 204, 0.4), rgba(0, 128, 255, 0.4)), url('images/pexels-artempodrez-5726714.jpg'); /* Lower opacity to 0.4 */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: left;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Other existing CSS remains the same */
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+#about img {
+    width: 200px; /* Increased size */
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px; /* Add space between image and text */
+}
+
+#about-text {
+    max-width: 600px;
+    font-size: 1.1em;
+    line-height: 1.6;
 }
 
 
-.main-content {
+/* Existing CSS continues below... */
+
+
+.hero-content {
     display: flex;
     justify-content: space-between;
-    padding: 50px;
-    z-index: 1; /* Ensure it's above the background but below the header */
-    position: relative;
-}
-
-.welcome-message {
-    flex: 1;
-    z-index: 2; /* Ensure the welcome message is visible */
-
-}
-.welcome-message {
-    color: white; /* Make sure the text is white for visibility */
-    text-align: left; /* Align text to the left */
-    margin: 130px 0 0 20px; /* Add some margin to position it properly */
-    font-family: Arial, sans-serif; /* Set the font */
-}
-
-.welcome-message h1 {
-    font-size: 36px; /* Set size for the main heading */
-    font-weight: bold; /* Make it bold */
-}
-
-.welcome-message p {
-    font-size: 18px; /* Set size for the paragraph */
-}
-.welcome-container {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center vertically */
-    align-items: flex-start; /* Align to the left */
-    height: 100%; /* Ensure it takes the full height of the parent */
-    margin-left: 20px; /* Optional: Adjust left margin */
-    color: white; /* Ensure text is visible */
-}
-
-
-.info-boxes {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    z-index: 2; /* Ensure the buttons are visible */
-}
-
-.box {
-    background: rgba(255, 255, 255, 0.8);
-    color: black;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 5px;
-    text-align: center; /* Center the text in the boxes */
-    z-index: 2; /* Ensure the boxes are visible */
-}
-
-.contact-us {
-    padding: 10px 20px;
-    background-color: royalblue;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-
-.info-boxes {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.box {
-    background-color: royalblue;
-    color: white;
-    padding: 50px;
-    margin: 30px 120px;
-    border-radius: 15px;
-    text-align: center;
-    width: 400px;
-    height: 50px;
-    cursor: pointer; /* To make it clickable */
-    transition: background-color 0.3s;
-}
-
-.box:hover {
-    background-color: #004aad; /* Darker blue on hover */
-}
-
-
-
-.footer {
-    background-color: royalblue; /* Change to royal blue */
-    color: white;
-    padding: 20px;
-    position: fixed; /* Stick the footer to the bottom */
-    bottom: 0;
-    width: 100%; /* Make sure it spans the full width */
-}
-
-.footer .ribbon {
-    display: flex;
-    justify-content: space-around;
     align-items: center;
+    width: 80%;
+    max-width: 1200px;
 }
 
-.footer h2 {
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
     margin-bottom: 10px;
+    animation: slideInLeft 1s ease-in-out;
 }
 
-.footer button {
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 1s forwards;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hero-buttons .button {
+    background-color: #ffdd57;
+    color: #333;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-buttons .button:hover {
+    background-color: #f4c542;
+    transform: scale(1.05);
+}
+
+main {
+    padding: 40px;
+}
+
+#about, #services {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Add this to your existing CSS file (e.g., style.css) */
+.notification {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
     padding: 10px 20px;
-    margin-top: 5px;
-    background-color: white; /* White background for buttons */
-    color: royalblue; /* Button text in royal blue */
-    border: none;
-    border-radius: 5px; /* Optional: rounded corners for buttons */
-    cursor: pointer; /* Make it look clickable */
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 9999;
 }
 
-.footer button:hover {
-    background-color: #fff; /* Lighter button color on hover */
-    color: #004aad; /* Darker blue on hover */
-}
+
+
 

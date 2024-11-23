@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="manage_patient.css">
+    <title>Manage Patient</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Medica</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/social.png" alt="Instagram"></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="manage-patient">
+            <div class="container">
+                <h2>Manage Patient</h2>
+                <p>Fill in the details below to manage patient information.</p>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="patient-id">Patient ID</label>
+                        <input type="text" id="patient-id" name="patient-id" placeholder="Enter Patient ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hospital-name">Hospital Name</label>
+                        <input type="text" id="hospital-name" name="hospital-name" placeholder="Enter Hospital Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Medica. All rights reserved.</p>
+    </footer>
+</body>
+</html>

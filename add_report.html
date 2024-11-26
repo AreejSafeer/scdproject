@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="add_report.css">
+    <title>Add Report</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Medica</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/social.png" alt="Instagram"></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <div class="add-report">
+            <div class="container">
+                <h2>Add Patient Report</h2>
+                <form id="reportForm" action="/addReport" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="patient_id">Patient ID</label>
+                        <input type="number" id="patient_id" name="patient_id" placeholder="Enter Patient ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" id="full_name" name="full_name" placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hospital_name">Hospital Name</label>
+                        <input type="text" id="hospital_name" name="hospital_name" placeholder="Enter Hospital Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="report_file">Upload Report</label>
+                        <input type="file" id="report_file" name="report_file" accept=".pdf,.txt" required>
+                    </div>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+                <div id="message" class="message"></div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Medica. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
